@@ -10,13 +10,13 @@
 | Feature | Why it matters for Trim Haus |
 |---|---|
 | **Book your chair** flow: service → barber → day & time → name → confirmation | Gives them the online booking that most Al Ain barbers lack (only Evano Spa has it, via Fresha). Uses the real price list and real 9am–10pm hours. |
-| **WhatsApp hand-off** that builds the message live as you choose ("Hi Trim Haus, I'd like a Haircut + Facial with Jo Mar on Thu 9 Oct at 7:30 pm…") | Fits how customers already book. Owners need no new software on day one. |
+| **WhatsApp hand-off** that builds the message live as you choose ("Hi Trim Haus, I'd like a Haircut + Facial with Barber A on Thu 9 Oct at 7:30 pm…") | Fits how customers already book. Owners need no new software on day one. |
 | Sticky mobile bar: **Book · WhatsApp · Call** | Most traffic is phones. The main actions are always one tap away. |
 | "Add to calendar" (.ics generated in the browser) | Cuts no-shows. |
 | Full price list as real text, AED, with combos showing the saving ("save AED 5") | Replaces the hard-to-read Facebook image. Searchable. Combo savings push up the ticket. |
 | Live "Open now · closes 10 pm" status using UAE time (Asia/Dubai) | Encourages walk-ins after work. |
-| Team section with the real photo shoot; Jo Mar named, the other three marked as sample | Barber choice is a reason people pick a shop. |
-| Real Google rating 4.5★ / 8 reviews + 3 real quoted reviews with platform and date | Trust placed next to the Book button. |
+| Barber choice: four generic chairs (Barber A–D), no names or photos since staff may change | Customers can still ask for the same chair; real names and photos can be added in the paid build. |
+| Real Google rating 4.5★ / 8 reviews + 2 real quoted reviews with platform and date | Trust placed next to the Book button. |
 | Visit section: map embed, Plus code, "Get directions", hours | Walk-ins and first visits. |
 | Newsletter → "Offers on WhatsApp" opt-in (demo, nothing sent) | Their Nov 2025 "first 7 customers free" post shows they run promos. A broadcast list suits that. |
 | Arabic accents (Arabic name, key labels) | Matches their bilingual signage and Arab clientele. |

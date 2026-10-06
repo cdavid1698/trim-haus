@@ -147,7 +147,7 @@ const en = {
     title: "Your barbers",
     intro: "White tunics, black gloves, and a steady hand with clippers. Book your favourite barber, or take the first free chair.",
     bookWith: (name: string) => `Book with ${name}`,
-    note: "Demo: barber names other than Jo Mar are placeholders until the salon confirms them.",
+    note: "Demo: barbers are shown as Barber A–D. The live site can add each barber's name and photo once the salon confirms the team.",
     shopTitle: "Inside the shop",
     shopText:
       "A bright, clean room on Khalifa Street, with the gold Trim Haus sign out front. Off the clock, the team plays basketball as Team Trim Haus x Primo.",
@@ -341,7 +341,7 @@ const ar: Dictionary = {
     title: "حلاقونا",
     intro: "زي أبيض، قفازات سوداء، ويد ثابتة مع ماكينة الحلاقة. احجز مع حلاقك المفضل، أو خذ أول كرسي متاح.",
     bookWith: (name: string) => `احجز مع ${name}`,
-    note: "نسخة تجريبية: أسماء الحلاقين غير جو مار مؤقتة لحين تأكيدها من الصالون.",
+    note: "نسخة تجريبية: يظهر الحلاقون باسم الحلاق أ إلى د. يمكن إضافة اسم وصورة كل حلاق في الموقع النهائي بعد تأكيد الفريق من الصالون.",
     shopTitle: "داخل المحل",
     shopText:
       "صالة نظيفة ومشرقة في شارع خليفة، تعلوها لافتة تريم هاوس الذهبية. وخارج أوقات العمل، يلعب الفريق كرة السلة باسم Team Trim Haus x Primo.",

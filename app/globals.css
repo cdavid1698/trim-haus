@@ -42,14 +42,17 @@ body {
   font-family: var(--font-sans);
 }
 
-:focus-visible {
-  outline: 3px solid var(--color-brass);
-  outline-offset: 2px;
-}
+/* In the base layer so utilities such as outline-none (on programmatically focused headings) still win. */
+@layer base {
+  :focus-visible {
+    outline: 3px solid var(--color-brass);
+    outline-offset: 2px;
+  }
 
-.on-dark :focus-visible,
-.on-dark:focus-visible {
-  outline-color: var(--color-gold);
+  .on-dark :focus-visible,
+  .on-dark:focus-visible {
+    outline-color: var(--color-gold);
+  }
 }
 
 .display {

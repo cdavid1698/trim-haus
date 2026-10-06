@@ -14,6 +14,7 @@ import { VisitBlock } from "@/components/VisitBlock";
 import { OffersOptIn } from "@/components/OffersOptIn";
 import { WhatsAppBubble } from "@/components/WhatsAppBubble";
 import { WhatsAppIcon } from "@/components/icons";
+import { BarberTile } from "@/components/BarberTile";
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
@@ -22,7 +23,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   const path = (p: string) => localePath(lang, p);
 
   const exampleMessage = bookingMessage(
-    { serviceId: "haircut-facial", barberId: "jo-mar", date: "2026-10-08", minutes: 19 * 60 + 30, name: t.home.exampleName, note: "" },
+    { serviceId: "haircut-facial", barberId: "barber-a", date: "2026-10-08", minutes: 19 * 60 + 30, name: t.home.exampleName, note: "" },
     lang,
   );
 
@@ -125,20 +126,13 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             {t.home.meetTeam}
           </Link>
         </div>
-        <ul className="-mx-4 mt-8 flex snap-x gap-4 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-4 md:overflow-visible md:px-0">
+        <ul className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
           {barbers.map((b) => (
-            <li key={b.id} className="w-56 shrink-0 snap-start md:w-auto">
+            <li key={b.id}>
               <Link href={`${path("/book")}?barber=${b.id}`} className="group block">
-                <Image
-                  src={b.image}
-                  alt={b.alt[lang]}
-                  width={640}
-                  height={800}
-                  sizes="(min-width: 768px) 280px, 224px"
-                  className="aspect-[4/5] w-full rounded object-cover"
-                />
+                <BarberTile barber={b} lang={lang} className="aspect-square w-full" />
                 <span className="mt-3 block text-lg font-semibold group-hover:underline">{b.name[lang]}</span>
-                <span className="block text-ink-soft">{b.note[lang]}</span>
+                <span className="block text-ink-soft">{t.barbers.bookWith(b.name[lang])}</span>
               </Link>
             </li>
           ))}

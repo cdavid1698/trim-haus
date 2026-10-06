@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowLeft, CalendarPlus, Check, Phone } from "lucide-react";
 import { categories, getService, saving, services, type Category } from "@/content/services";
@@ -303,8 +302,8 @@ function BarberStep({ headingRef, value, onChange }: { headingRef: HeadingRef; v
   return (
     <fieldset>
       <StepHeading headingRef={headingRef}>{t.book.barberTitle}</StepHeading>
-      <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
-        <label className={`${optionClass} col-span-2 sm:col-span-3`}>
+      <div className="mt-6 grid grid-cols-2 gap-3">
+        <label className={`${optionClass} col-span-2`}>
           <input type="radio" name="barber" checked={value === anyBarber.id} onChange={() => onChange(anyBarber.id)} className="sr-only" />
           <span className="flex-1">
             <span className="block text-lg font-semibold">{anyBarber.name[lang]}</span>
@@ -312,13 +311,12 @@ function BarberStep({ headingRef, value, onChange }: { headingRef: HeadingRef; v
           </span>
         </label>
         {barbers.map((br) => (
-          <label key={br.id} className={`${optionClass} flex-col items-stretch gap-0 overflow-hidden p-0`}>
+          <label key={br.id} className={optionClass}>
             <input type="radio" name="barber" checked={value === br.id} onChange={() => onChange(br.id)} className="sr-only" />
-            <Image src={br.image} alt="" width={320} height={400} sizes="(min-width: 640px) 200px, 45vw" className="aspect-[4/5] w-full object-cover" />
-            <span className="px-3 py-2.5">
-              <span className="block font-semibold">{br.name[lang]}</span>
-              <span className="block text-sm opacity-75">{br.note[lang]}</span>
+            <span className="display grid size-10 shrink-0 place-items-center rounded-full border-2 border-current text-xl" aria-hidden>
+              {br.letter[lang]}
             </span>
+            <span className="text-lg font-semibold">{br.name[lang]}</span>
           </label>
         ))}
       </div>

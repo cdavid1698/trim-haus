@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { barbers } from "@/content/barbers";
+import { BarberTile } from "@/components/BarberTile";
 import { getDictionary, isLocale, localePath } from "@/content/i18n";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/barbers">): Promise<Metadata> {
@@ -27,19 +28,11 @@ export default async function BarbersPage({ params }: PageProps<"/[lang]/barbers
           <h1 className="display text-5xl md:text-6xl">{t.title}</h1>
           <p className="mt-4 text-lg text-ink-soft">{t.intro}</p>
         </div>
-        <ul className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 lg:grid-cols-4">
           {barbers.map((b) => (
             <li key={b.id}>
-              <Image
-                src={b.image}
-                alt={b.alt[lang]}
-                width={640}
-                height={800}
-                sizes="(min-width: 1024px) 280px, (min-width: 640px) 45vw, 100vw"
-                className="aspect-[4/5] w-full rounded object-cover"
-              />
+              <BarberTile barber={b} lang={lang} className="aspect-square w-full" />
               <h2 className="display mt-4 text-2xl">{b.name[lang]}</h2>
-              <p className="text-ink-soft">{b.note[lang]}</p>
               <Link
                 href={`${localePath(lang, "/book")}?barber=${b.id}`}
                 className="mt-3 inline-flex min-h-11 items-center rounded border-2 border-onyx px-4 font-semibold hover:bg-onyx hover:text-tunic"

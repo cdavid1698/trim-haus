@@ -29,7 +29,7 @@ export function Reviews({ lang }: { lang: Locale }) {
         </h2>
         <RatingBadge lang={lang} />
       </div>
-      <ul className="mt-8 grid gap-6 md:grid-cols-3">
+      <ul className="mt-8 grid gap-6 md:grid-cols-2">
         {reviews.map((r) => (
           <li key={r.author} className="border-t-2 border-onyx pt-5">
             {/* Quotes stay in the reviewer's own words (English). */}

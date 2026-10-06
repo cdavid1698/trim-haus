@@ -9,10 +9,10 @@ All photos are the business's own, from its public Facebook page (S1), accessed 
 | `shop-interior.webp` | Facebook photo (shoot) | Shows a customer's face in profile |
 | `window-fade.webp` | Facebook photo (shoot) | |
 | `shopfront.webp` | Facebook cover photo | Opening-day balloons |
-| `barber-jomar.webp` | Facebook photo captioned "Barber Jo Mar" | Cropped above the caption watermark |
-| `barber-1.webp`, `barber-2.webp`, `barber-4.webp` | Crops of barbers from the Facebook shoot | Names unknown; customers cropped out where possible |
 | `trim-haus-logo.webp`, `th-monogram.webp`, `app/icon.png`, `app/apple-icon.png` | Logo supplied in the agency brief | Monogram cut out of the supplied logo |
 
 The WhatsApp glyph in `components/icons.tsx` comes from Simple Icons (CC0) and is used only on WhatsApp actions.
+
+Barber portraits were removed at the agency's request (staff may have changed); barbers appear as lettered tiles. The hero and shop photos still show staff at work.
 
 No stock or AI-generated images are used.
