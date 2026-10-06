@@ -45,3 +45,6 @@ next-env.d.ts
 /research/raw/
 /research/qa/
 /.claude/
+
+.vercel
+.env*
