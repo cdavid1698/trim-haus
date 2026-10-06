@@ -1,8 +1,10 @@
 import { Star } from "lucide-react";
+import { getDictionary, type Locale } from "@/content/i18n";
 import { reviews } from "@/content/reviews";
 import { site } from "@/content/site";
 
-export function RatingBadge({ tone = "light" }: { tone?: "light" | "dark" }) {
+export function RatingBadge({ lang, tone = "light" }: { lang: Locale; tone?: "light" | "dark" }) {
+  const r = getDictionary(lang).common.rating(site.rating.value, site.rating.count);
   return (
     <a
       href={site.mapsUrl}
@@ -10,34 +12,37 @@ export function RatingBadge({ tone = "light" }: { tone?: "light" | "dark" }) {
     >
       <Star className={`size-4 fill-current ${tone === "dark" ? "text-gold" : "text-brass"}`} aria-hidden />
       <span>
-        <strong className="font-semibold">{site.rating.value}</strong> on {site.rating.platform} · {site.rating.count} reviews
+        <strong className="font-semibold">{r.value}</strong>
+        {r.rest}
       </span>
     </a>
   );
 }
 
-export function Reviews() {
+export function Reviews({ lang }: { lang: Locale }) {
+  const t = getDictionary(lang).reviews;
   return (
     <section aria-labelledby="reviews-heading" className="mx-auto max-w-6xl px-4 py-16 md:py-20">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <h2 id="reviews-heading" className="display text-4xl md:text-5xl">
-          What customers say
+          {t.title}
         </h2>
-        <RatingBadge />
+        <RatingBadge lang={lang} />
       </div>
       <ul className="mt-8 grid gap-6 md:grid-cols-3">
         {reviews.map((r) => (
           <li key={r.author} className="border-t-2 border-onyx pt-5">
-            <blockquote className="display text-2xl leading-snug">“{r.text}”</blockquote>
+            {/* Quotes stay in the reviewer's own words (English). */}
+            <blockquote lang="en" dir="ltr" className="font-display text-2xl leading-snug">
+              “{r.text}”
+            </blockquote>
             <p className="mt-4 text-sm text-ink-soft">
-              {r.author} · {r.platform} review, {r.when}
+              <bdi>{r.author}</bdi> · {t.meta(r.when[lang])}
             </p>
           </li>
         ))}
       </ul>
-      <p className="mt-8 text-sm text-ink-soft">
-        Quoted from {site.name}&apos;s public Google reviews (checked {site.rating.checked}).
-      </p>
+      <p className="mt-8 text-sm text-ink-soft">{t.note}</p>
     </section>
   );
 }

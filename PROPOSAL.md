@@ -25,7 +25,7 @@ Competitors are just as weak online. Of the listed Al Ain barbers, only Evano Sp
 - **Real Google reviews** and the 4.5★ rating next to the Book button.
 - **A Visit page** with map, Plus code, directions and the gold shopfront photo, so first-timers find it.
 - **A sticky mobile bar** with Book · WhatsApp · Call, because most visitors will be on a phone.
-- **Bilingual touches** (Arabic name and labels) that match the shop signage.
+- **Arabic first, English one tap away.** The site opens in Arabic (right-to-left, Kufi headings that echo the shop sign) with a toggle to English that remembers the choice. Booking messages sent in Arabic keep the English service and barber names in brackets, so every barber can read them.
 - Search-ready structure: HairSalon schema, page titles and descriptions. The demo itself is set to noindex.
 
 ## Demo vs full build
@@ -33,7 +33,7 @@ Competitors are just as weak online. Of the listed Al Ain barbers, only Evano Sp
 |---|---|---|
 | Booking | Builds the WhatsApp message; slot availability is simulated | Real per-barber calendars (Cal.com/Fresha or WhatsApp Business API), no double booking, automatic reminders |
 | Prices | From the published list | Owner-editable CMS |
-| Language | English with Arabic accents | Full Arabic version (RTL) |
+| Language | Arabic (default) + English toggle | Native-speaker copy review, Arabic SEO, optional Filipino/Urdu |
 | Reviews | 3 quoted Google reviews | Live Google rating + post-visit review request links |
 | Offers list | Form only, nothing stored | WhatsApp broadcast list / loyalty stamp card |
 | Gallery | Photos from Facebook | Instagram feed, before/after fades |
@@ -47,7 +47,8 @@ Competitors are just as weak online. Of the listed Al Ain barbers, only Evano Sp
 - **Address detail:** shop/building number and parking information.
 - **Hours:** Google (9 am – 10 pm daily) was used; Facebook still says "Always open".
 - **Images:** all photos come from the salon's Facebook page. Written permission is needed, especially for photos where customers are visible (see `research/image-credits.md`).
-- **Legal pages:** templates that need review by a UAE lawyer.
+- **Arabic copy:** all Arabic text was written for the demo and should be reviewed by a native speaker (ideally someone who knows how the shop talks to customers) before launch.
+- **Legal pages:** templates (Arabic and English) that need review by a UAE lawyer.
 - **Trade licence / legal entity:** the sign reads "Sole Proprietorship L.L.C"; we need the exact name and licence number for the footer.
 
 ## Open questions

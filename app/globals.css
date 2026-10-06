@@ -14,7 +14,22 @@
 
   --font-display: var(--font-marcellus), "Times New Roman", serif;
   --font-sans: var(--font-figtree), system-ui, sans-serif;
-  --font-arabic: var(--font-kufi), var(--font-figtree), sans-serif;
+  --font-arabic: var(--font-plex-ar), var(--font-figtree), sans-serif;
+}
+
+/* Arabic (default): Noto Kufi Arabic for headings, echoing the Kufic shop sign; IBM Plex Sans Arabic for text.
+   Elements marked lang="en" inside an Arabic page (and vice versa) switch fonts via the same variables. */
+:root[lang="ar"],
+[lang="ar"] {
+  --font-display: var(--font-kufi), var(--font-plex-ar), sans-serif;
+  --font-sans: var(--font-plex-ar), var(--font-figtree), sans-serif;
+}
+[lang="en"] {
+  --font-display: var(--font-marcellus), "Times New Roman", serif;
+  --font-sans: var(--font-figtree), system-ui, sans-serif;
+}
+[lang] {
+  font-family: var(--font-sans);
 }
 
 html {
@@ -44,6 +59,20 @@ body {
   line-height: 1.1;
 }
 
+/* Arabic script must never be letter-spaced (it breaks the joins) and needs taller lines. */
+[lang="ar"] .display,
+.display[lang="ar"] {
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.45;
+}
+[lang="ar"] [lang="en"] .display,
+[lang="ar"] .display[lang="en"] {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
 .arabic {
   font-family: var(--font-arabic);
 }
@@ -65,16 +94,21 @@ body {
   position: relative;
   background: #dcf8c6;
   color: #111b21;
-  border-radius: 0.75rem 0 0.75rem 0.75rem;
+  border-radius: 0.75rem;
+  border-start-end-radius: 0;
 }
 .bubble::after {
   content: "";
   position: absolute;
   top: 0;
-  right: -0.5rem;
+  inset-inline-end: -0.5rem;
   border-width: 0 0 0.6rem 0.6rem;
   border-style: solid;
   border-color: transparent transparent transparent #dcf8c6;
+}
+[dir="rtl"] .bubble::after {
+  border-width: 0 0.6rem 0.6rem 0;
+  border-color: transparent #dcf8c6 transparent transparent;
 }
 
 @keyframes pulse-once {

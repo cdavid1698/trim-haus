@@ -27,6 +27,7 @@ Rule: gold never appears as body text on light. Light sections use `brass`.
 - **Display — Marcellus** (Google, via next/font): an inscriptional Roman cut like the "TRIM HAUS" lettering in the logo, with flared serifs. Used for headings and the price board. Sentence case. Section names are not all caps.
 - **Body/UI — Figtree:** a friendly, slightly rounded grotesque, legible at small sizes. Prices use tabular numerals.
 - **Arabic — Noto Kufi Arabic:** for the Arabic shop name and bilingual labels, echoing the Kufic-style signage.
+- **Update (Arabic default):** the site now opens in Arabic. Arabic headings use **Noto Kufi Arabic 600** (the Kufic signage itself, rather than an accent) and Arabic text uses **IBM Plex Sans Arabic**. Arabic display text is never letter-spaced and gets a line height of 1.45. Marcellus and Figtree apply on `/en` and to English fragments inside Arabic pages (`lang="en"`). Prices and times use Western digits, as on UAE signage.
 - Scale (rem): 0.875 · 1 · 1.125 · 1.375 · 1.75 · 2.25 · 3 · 4 (hero, desktop). Body 1rem / 1.6. Max text measure 65ch.
 
 ## 4. Layout concept

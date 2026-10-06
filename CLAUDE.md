@@ -11,3 +11,4 @@ Proposal demo for Trim Haus Gents Salon ("The Filipino Barbershop"), Khalifa Str
 - Booking logic sits behind `lib/booking.ts`. The demo hands bookings to WhatsApp (`wa.me`); nothing is stored or sent by the site.
 - Design tokens are in `app/globals.css` and documented in `plan/design-plan.md`. Gold is only used on onyx backgrounds; use brass on light.
 - The site is `noindex` (metadata + robots.ts) because it is a demo.
+- Arabic is the default locale (no URL prefix, RTL); English is under `/en`. All UI strings live in `content/i18n.ts`; add every new string to both dictionaries. Use logical Tailwind classes (`ms-`, `me-`, `ps-`, `pe-`, `start-`, `text-start`/`text-end`) so layouts mirror correctly.
