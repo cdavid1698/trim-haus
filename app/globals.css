@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+/* Tokens from plan/design-plan.md. Gold is for dark surfaces only; use brass for gold-family text on light. */
+@theme {
+  --color-onyx: #1d1d1d;
+  --color-onyx-2: #262626;
+  --color-tunic: #f7f6f2;
+  --color-gold: #c9a24a;
+  --color-brass: #7a5a12;
+  --color-steel: #8e949a;
+  --color-chat: #25d366;
+  --color-line: #dedbd2;
+  --color-ink-soft: #4a4a48;
+
+  --font-display: var(--font-marcellus), "Times New Roman", serif;
+  --font-sans: var(--font-figtree), system-ui, sans-serif;
+  --font-arabic: var(--font-kufi), var(--font-figtree), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-tunic);
+  color: var(--color-onyx);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-brass);
+  outline-offset: 2px;
+}
+
+.on-dark :focus-visible,
+.on-dark:focus-visible {
+  outline-color: var(--color-gold);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+.arabic {
+  font-family: var(--font-arabic);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Dot leaders, as on the salon's printed price list. */
+.leader {
+  flex: 1;
+  min-width: 1.5rem;
+  border-bottom: 2px dotted color-mix(in srgb, var(--color-steel) 60%, transparent);
+  transform: translateY(-0.3em);
+}
+
+/* The signature WhatsApp bubble. */
+.bubble {
+  position: relative;
+  background: #dcf8c6;
+  color: #111b21;
+  border-radius: 0.75rem 0 0.75rem 0.75rem;
+}
+.bubble::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -0.5rem;
+  border-width: 0 0 0.6rem 0.6rem;
+  border-style: solid;
+  border-color: transparent transparent transparent #dcf8c6;
+}
+
+@keyframes pulse-once {
+  0% { box-shadow: 0 0 0 0 rgb(37 211 102 / 0.6); }
+  100% { box-shadow: 0 0 0 10px rgb(37 211 102 / 0); }
+}
+.pulse-once {
+  animation: pulse-once 1.6s ease-out 2;
+}
+
+@keyframes line-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+.line-in {
+  animation: line-in 0.25s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .pulse-once, .line-in { animation: none; }
+}
